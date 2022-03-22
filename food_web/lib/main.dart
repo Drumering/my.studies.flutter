@@ -1,0 +1,25 @@
+import 'package:flutter/material.dart';
+import 'package:food_web/constants.dart';
+import 'package:food_web/screens/home/home_screen.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'Food Web',
+      theme: ThemeData(
+          colorScheme:
+              ColorScheme.fromSwatch().copyWith(primary: kPrimaryColor)),
+      home: const HomeScreen(),
+    );
+    ;
+  }
+}
