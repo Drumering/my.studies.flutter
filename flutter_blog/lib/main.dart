@@ -12,21 +12,24 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    ThemeData myTheme = ThemeData(
+      // colorScheme: ColorScheme.fromSwatch().copyWith(primary: kPrimaryColor),
+      // primaryColor: kPrimaryColor,
+      scaffoldBackgroundColor: kBgColor,
+      elevatedButtonTheme: ElevatedButtonThemeData(
+        style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
+      ),
+      textTheme: const TextTheme(
+        bodyText1: TextStyle(color: kBodyTextColor),
+        bodyText2: TextStyle(color: kBodyTextColor),
+        headline5: TextStyle(color: kDarkBlackColor),
+      ),
+    );
+
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Blog',
-      theme: ThemeData(
-        primaryColor: kPrimaryColor,
-        scaffoldBackgroundColor: kBgColor,
-        elevatedButtonTheme: ElevatedButtonThemeData(
-          style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
-        ),
-        textTheme: const TextTheme(
-          bodyText1: TextStyle(color: kBodyTextColor),
-          bodyText2: TextStyle(color: kBodyTextColor),
-          headline5: TextStyle(color: kDarkBlackColor),
-        ),
-      ),
+      theme: myTheme,
       home: const MainScreen(),
     );
   }
