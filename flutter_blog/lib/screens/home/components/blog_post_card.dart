@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/constants.dart';
-import 'package:flutter_blog/models/Blog.dart';
+import 'package:flutter_blog/models/blog.dart';
+import 'package:flutter_blog/responsive.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -47,7 +48,7 @@ class BlogPostCard extends StatelessWidget {
                   child: Text(
                     blog.title,
                     style: GoogleFonts.raleway(
-                        fontSize: 32,
+                        fontSize: Responsive.isDesktop(context) ? 32 : 24,
                         color: kDarkBlackColor,
                         height: 1.3,
                         fontWeight: FontWeight.w600),

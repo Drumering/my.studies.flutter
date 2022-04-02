@@ -13,8 +13,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ThemeData myTheme = ThemeData(
-      // colorScheme: ColorScheme.fromSwatch().copyWith(primary: kPrimaryColor),
-      // primaryColor: kPrimaryColor,
+      colorScheme: ColorScheme.fromSwatch().copyWith(primary: kPrimaryColor),
       scaffoldBackgroundColor: kBgColor,
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: TextButton.styleFrom(backgroundColor: kPrimaryColor),
@@ -30,7 +29,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Blog',
       theme: myTheme,
-      home: const MainScreen(),
+      home: MainScreen(),
     );
   }
 }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_blog/constants.dart';
-import 'package:flutter_blog/models/Blog.dart';
+import 'package:flutter_blog/models/blog.dart';
+import 'package:flutter_blog/responsive.dart';
 import 'package:flutter_blog/screens/home/components/blog_post_card.dart';
 import 'package:flutter_blog/screens/home/components/categories.dart';
 import 'package:flutter_blog/screens/home/components/recent_posts.dart';
@@ -26,21 +27,23 @@ class Content extends StatelessWidget {
                     )),
           ),
         ),
-        const SizedBox(
-          width: kDefaultPadding,
-        ),
-        //Side bar
-        Expanded(
-          child: Column(
-            children: const [
-              Search(),
-              SizedBox(height: kDefaultPadding),
-              Categories(),
-              SizedBox(height: kDefaultPadding),
-              RecentPosts(),
-            ],
+        if (!Responsive.isMobile(context))
+          const SizedBox(
+            width: kDefaultPadding,
           ),
-        ),
+        //Side bar
+        if (!Responsive.isMobile(context))
+          Expanded(
+            child: Column(
+              children: const [
+                Search(),
+                SizedBox(height: kDefaultPadding),
+                Categories(),
+                SizedBox(height: kDefaultPadding),
+                RecentPosts(),
+              ],
+            ),
+          ),
       ],
     );
   }

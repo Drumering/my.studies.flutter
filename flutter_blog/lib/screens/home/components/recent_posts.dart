@@ -57,6 +57,7 @@ class RecentPostCard extends StatelessWidget {
                 child: Text(
                   title,
                   maxLines: 2,
+                  overflow: TextOverflow.ellipsis,
                   style: GoogleFonts.raleway(
                       color: kDarkBlackColor,
                       fontWeight: FontWeight.bold,
